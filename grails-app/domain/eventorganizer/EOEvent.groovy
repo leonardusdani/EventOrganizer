@@ -9,6 +9,11 @@ class EOEvent {
     Date startDate
     Date endDate
     String description
+    static hasMany = [volunteers : EOUser, respondents : String, sponsorships : EOSponsorship, tasks : EOTask, messages: EOMessage]
+
+    String toString(){
+        "$name, $city"
+    }
 
     static constraints = {
         name blank: false
@@ -18,5 +23,9 @@ class EOEvent {
         venue blank: false
         startDate()
         endDate()
+        volunteers nullable: true
+        sponsorships nullable: true
+        tasks nullable: true
+        messages nullable: true
     }
 }

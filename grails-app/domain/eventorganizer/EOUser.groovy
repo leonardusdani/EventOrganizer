@@ -9,6 +9,10 @@ class EOUser {
     String website
     String bio
 
+    String toString(){
+        "$fullName"
+    }
+
     static constraints = {
         fullName blank: false
         userName blank: false
